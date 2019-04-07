@@ -1,7 +1,7 @@
 self.addEventListener('install', event => {
     event.waitUntil(
         caches
-        .open('my-site-name')
+        .open('test-site')
         .then(cache =>
             cache.addAll([
                 'data.json',
