@@ -31,6 +31,10 @@
 
                 }
             }
+
+            setTimeout(() => {
+                fetch("data.json").then(r => r.json()).then(r=>console.log(r))
+            }, 5000)
         </script>
     </body>
 </html>
