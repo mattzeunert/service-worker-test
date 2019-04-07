@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        Service worker test
+        
+        <script>
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/worker.js').then(
+                    () => {
+                    
+                    },
+                    err => {
+                        console.error('SW registration failed!', err)
+                    }
+                )
+            })
+        </script>
+    </body>
+</html>
