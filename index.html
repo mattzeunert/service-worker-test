@@ -20,11 +20,17 @@
             (async function() {
                 const startTime = new Date()
                 while ((new Date().valueOf() - startTime.valueOf()) < 5000) {
-                    console.log((new Date().valueOf() - startTime.valueOf()))
+                    await count(100)
                     for (var i=0; i< 10000000;i++) {}
                     await new Promise(resolve => setTimeout(resolve, 30))
                 }
-            })()
+            })();
+            async function count(ms) {
+                const startTime = new Date()
+                while ((new Date().valueOf() - startTime.valueOf()) < ms) { 
+
+                }
+            }
         </script>
     </body>
 </html>
