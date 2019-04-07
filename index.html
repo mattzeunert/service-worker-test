@@ -15,5 +15,16 @@
                 )
             })
         </script>
+
+        <script>
+            (async function() {
+                const startTime = new Date()
+                while ((new Date().valueOf() - startTime.valueOf()) < 5000) {
+                    console.log((new Date().valueOf() - startTime.valueOf()))
+                    for (var i=0; i< 1000000;i++) {}
+                    await new Promise(resolve => setTimeout(resolve, 50))
+                }
+            })()
+        </script>
     </body>
 </html>
