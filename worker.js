@@ -10,3 +10,10 @@ self.addEventListener('install', event => {
         )
     )
 })
+
+self.addEventListener('fetch', function(event){
+    console.log('Caught request for ' + event.request.url);
+    if (event.request.url.includes("/response-direct-from-service-worker.json")) {
+        event.respondWith(new Response(`{"hello": "world"}`))
+    }
+});
