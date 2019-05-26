@@ -1,5 +1,7 @@
 self.addEventListener('install', event => {
     event.waitUntil(
+        // Make interception work first time round https://developer.mozilla.org/en-US/docs/Web/API/Clients/claim
+        self.clients.claim(),
         caches
         .open('test-site')
         .then(cache =>
