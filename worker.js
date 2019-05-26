@@ -11,6 +11,7 @@ self.addEventListener('install', event => {
     )
 })
 
+console.log("adding fetch event listener")
 self.addEventListener('fetch', function(event){
     console.log('Caught request for ' + event.request.url);
     if (event.request.url.includes("/response-direct-from-service-worker.json")) {
