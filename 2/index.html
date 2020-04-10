@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        Service worker test
+        
+        <script>
+            if (location.href.includes("installWorker")) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('worker.js').then(
+                        () => {
+                        
+                        },
+                        err => {
+                            console.error('SW registration failed!', err)
+                        }
+                    )
+                })
+            }
+        </script>
+
+        <script>
+            (async function() {
+                const startTime = new Date()
+                while ((new Date().valueOf() - startTime.valueOf()) < 5000) {
+                    await count(100)
+                    for (var i=0; i< 10000000;i++) {}
+                    await new Promise(resolve => setTimeout(resolve, 30))
+                }
+            })();
+            async function count(ms) {
+                const startTime = new Date()
+                while ((new Date().valueOf() - startTime.valueOf()) < ms) { 
+
+                }
+            }
+
+            setTimeout(() => {
+                const s = document.createElement("script")
+                s.src = "lodash.js"
+                document.documentElement.appendChild(s)
+            }, 5000)
+        </script>
+    </body>
+</html>
