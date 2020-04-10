@@ -18,5 +18,7 @@ self.addEventListener('activate', (event) => {
 
 console.log("adding fetch event listener")
 self.addEventListener('fetch', function(event){
-    event.respondWith(caches.match(event.request));
+    if (event.request.url.includes("lodash")) {
+        event.respondWith(caches.match(event.request));
+    }
 });
